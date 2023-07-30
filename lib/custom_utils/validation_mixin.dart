@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 mixin ValidationMixn{
   String? validateEmail(String ? value) {
     if (value==null || value.isEmpty) return "Please enter your email";
@@ -28,7 +30,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -47,7 +49,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -61,7 +63,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -93,7 +95,7 @@ mixin ValidationMixn{
       return "Invalid mobile number";
     }
     Pattern pattern = r'(^(?:[+0]9)?[0-9]{9,20}$)';
-    RegExp regex = new RegExp("$pattern");
+    RegExp regex =  RegExp("$pattern");
     if (!regex.hasMatch(value.trim())) {
       return "Invalid mobile number";
     }
@@ -104,7 +106,7 @@ mixin ValidationMixn{
     //([0-2][0-9]|(3)[0-1])[-|\/](((0)[0-9])|((1)[0-2]))[-|\/]\d{4}
     if (value.isEmpty) return "Please enter month and year";
     Pattern pattern = r'^(((0)[0-9])|((1)[0-2]))[/]\d{2}';
-    RegExp regex = new RegExp("$pattern");
+    RegExp regex = RegExp("$pattern");
     if (!regex.hasMatch(value.trim())) {
       return "eg. mm/yy";
     }
@@ -123,7 +125,7 @@ mixin ValidationMixn{
 
   String ? validateVechileNo(String ? value){
     Pattern pattern = 'r(^[A-Z]{3}-\d{3}-\d{2})';
-    RegExp regex = new RegExp("$pattern");
+    RegExp regex = RegExp("$pattern");
     if (!regex.hasMatch(value!.trim())) {
       return "Invalid Vechile Number";
     }
@@ -140,7 +142,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -156,7 +158,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -172,7 +174,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -185,7 +187,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -201,7 +203,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -217,7 +219,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -233,7 +235,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -246,7 +248,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -262,7 +264,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -283,7 +285,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -296,7 +298,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -309,7 +311,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -322,7 +324,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -335,7 +337,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -345,7 +347,7 @@ mixin ValidationMixn{
     if (value.isEmpty) return "Enter Card Holder Name";
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
@@ -355,7 +357,7 @@ mixin ValidationMixn{
     // only for single country
     // String pattern = r'(^(?:[+0]9)?[0-9]{10,15}$)';
     String pattern = r'(^(?:[+0-9])?[0-9]{10,15}$)';
-    RegExp regExp = new RegExp(pattern);
+    RegExp regExp =   RegExp(pattern);
     if (value.length == 0) {
       return 'Please enter mobile number';
     } else if (!regExp.hasMatch(value)) {
@@ -375,16 +377,18 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
     return null;
   }
-  String? validateNewPassword(String value) {
-    print("validatepassword : $value ");
+  String?  password(String value) {
+    if (kDebugMode) {
+      print("validatepassword : $value ");
+    }
 
-    if (value.isEmpty) return "Enter your new password";
+    if (value.isEmpty) return "Enter your   password";
     if (!RegExp(r"^(?=.*[A-Za-z])(?=.*\d).{6,}$").hasMatch(value)) {
       return 'Password Should be Alphanumeric';
     }
@@ -393,12 +397,13 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
     return null;
   }
+
   String? validateConfirmPassword(String? value) {
     print("validatepassword : $value ");
 
@@ -411,7 +416,7 @@ mixin ValidationMixn{
     }
     // Pattern pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,}$';
-    // RegExp regex = new RegExp(pattern);
+    // RegExp regex =   RegExp(pattern);
     // if (!regex.hasMatch(value.trim())) {
     //   return "include one capital letter, number and symbol";
     // }
