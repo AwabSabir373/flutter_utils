@@ -58,7 +58,7 @@ mixin ValidationMixn{
   String? validatePersons(String value) {
 
     if (value.isEmpty) return "Enter persons";
-    if (value.length < 1) {
+    if (value.isEmpty) {
       return "Must be 1 person";
     }
     // Pattern pattern =
@@ -124,7 +124,7 @@ mixin ValidationMixn{
   }
 
   String ? validateVechileNo(String ? value){
-    Pattern pattern = 'r(^[A-Z]{3}-\d{3}-\d{2})';
+    Pattern pattern = 'r(^[A-Z]{3}-d{3}-d{2})';
     RegExp regex = RegExp("$pattern");
     if (!regex.hasMatch(value!.trim())) {
       return "Invalid Vechile Number";
@@ -182,7 +182,7 @@ mixin ValidationMixn{
   }
   String? validatZipCode(String value) {
     if (value.isEmpty) return "Enter Zip Code";
-    if (value.length < 0) {
+    if (value.length <= 2) {
       return "Zip Code";
     }
     // Pattern pattern =
@@ -358,7 +358,7 @@ mixin ValidationMixn{
     // String pattern = r'(^(?:[+0]9)?[0-9]{10,15}$)';
     String pattern = r'(^(?:[+0-9])?[0-9]{10,15}$)';
     RegExp regExp =   RegExp(pattern);
-    if (value.length == 0) {
+    if (value.isEmpty) {
       return 'Please enter mobile number';
     } else if (!regExp.hasMatch(value)) {
       return 'Please enter valid mobile number';
@@ -366,7 +366,9 @@ mixin ValidationMixn{
     return null;
   }
   String? validateOldPassword(String value) {
-    print("validatepassword : $value ");
+    if (kDebugMode) {
+      print("validatepassword : $value ");
+    }
 
     if (value.isEmpty) return "Enter your old password";
     if (!RegExp(r"^(?=.*[A-Za-z])(?=.*\d).{6,}$").hasMatch(value)) {
@@ -405,7 +407,9 @@ mixin ValidationMixn{
   }
 
   String? validateConfirmPassword(String? value) {
-    print("validatepassword : $value ");
+    if (kDebugMode) {
+      print("validatepassword : $value ");
+    }
 
     if (value ==null || value.isEmpty) return "Confirm your password";
     if (!RegExp(r"^(?=.*[A-Za-z])(?=.*\d).{6,}$").hasMatch(value)) {
