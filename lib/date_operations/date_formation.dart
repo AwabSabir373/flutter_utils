@@ -14,11 +14,11 @@ String convertTime24Formate(String time) {
   if (time.contains('PM')) {
     finalTime = time.replaceAll('PM', '');
     finalTime = finalTime.trim();
-    finalTime = finalTime + ' PM';
+    finalTime = '$finalTime PM';
   } else {
     finalTime = time.replaceAll('AM', '');
     finalTime = finalTime.trim();
-    finalTime = finalTime + ' AM';
+    finalTime = '$finalTime AM';
   }
   return finalTime;
 }
