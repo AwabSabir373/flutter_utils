@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* The current versions is 0.0.1 with the time this support more features will be added.
