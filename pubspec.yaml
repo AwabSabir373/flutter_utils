@@ -1,8 +1,8 @@
-name: flutter_utils
+name: flutter_utilsx
 description: It sort of contains a lot of methods that are daily usage while developing a project.
   like display dialogs & bottom sheets, check the value is null or not, Date Operations and formation
   It also helps you to reduce the code and make it more readable.
-version: 0.0.1
+version: 1.0.0
 homepage: 'https://github.com/AwabSabir373/flutter_utils'
 
 environment:
