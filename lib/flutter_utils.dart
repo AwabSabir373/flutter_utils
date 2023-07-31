@@ -5,5 +5,5 @@ export 'custom_utils/validation_mixin.dart';
 export 'date_operations/date_formates.dart';
 export 'date_operations/date_formation.dart';
 export 'dialogs/dialogs.dart';
-export 'dynamic_size_extenshions/context.dart';
+export 'context/context.dart';
 export 'dynamic_size_extenshions/size_extenshions.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../dynamic_size_extenshions/context.dart';
+import '../context/context.dart';
 enum DialogType {dialog, bottomSheet }
 showFullWidthDialog(
     {

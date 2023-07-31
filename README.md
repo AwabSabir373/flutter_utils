@@ -37,7 +37,6 @@ home: Home(),
 * If you want display bottom sheet you can set just type as DialogType.bottomSheet
 ```dart
 showFullWidthDialog(
-    {
        child : "any widget",
       type : DialogType.dialog,
       isCancelable: "click outside of the dialog to close",
@@ -45,7 +44,7 @@ showFullWidthDialog(
          " add your MaterialApp navigator key mentioned above",
       heightFactor : "height of the bottom sheet",
       elevation : "elevation of the bottom sheet",
-    }); 
+    ); 
 ```
 * check the value is null or not
 ```dart
@@ -73,9 +72,14 @@ class anyName with ValidationMixn{
 * wp is for width percentage
 * heightBox is for height
 ```dart
-  20.heightBox
+   20.heightBox
    10.widthBox
    5.hp
+```
+* Read Logs 
+* you can read logs by using the following code
+```dart
+  logMessage("your message");
 ```
 ## Additional information
 This package is still under development. 

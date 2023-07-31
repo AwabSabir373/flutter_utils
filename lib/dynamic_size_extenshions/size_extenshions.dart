@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'context.dart';
+import '../context/context.dart';
 
 extension MySizeBox on num{
   Widget get heightBox => SizedBox(height: toDouble());
