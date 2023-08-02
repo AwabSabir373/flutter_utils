@@ -7,7 +7,7 @@ showFullWidthDialog(
       required DialogType type,
       bool isCancelable=true,
       BuildContext ? context,
-      heightFactor = 0.86,
+      heightFactor = 0.5,
       double elevation=0,
     }) {
   if (type == DialogType.dialog) {

@@ -19,8 +19,8 @@ extension MySizeBoxDouble on double{
 
 //------------------ Responsive ------------------
 extension MyResponsive on num{
-  double get responsiveHeight => (AppCntx.currentContext.size!.height * (this/100));
-  double get responsiveWidth => (AppCntx.currentContext.size!.width * (this/100));
+  double get responsiveHeight => (MediaQuery.of(AppCntx.currentContext).size.height * (this/100));
+  double get responsiveWidth => (MediaQuery.of(AppCntx.currentContext).size.width * (this/100));
   Widget get hp => SizedBox(height: responsiveHeight);
   Widget get wp => SizedBox(width: responsiveWidth);
 }
