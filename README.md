@@ -16,7 +16,7 @@ that are daily usage while developing a project.
 
 ## Features
 
-It sort of contains a lot of methods that are daily usage while developing a project.
+It contains a lot of methods that are daily usage while developing a project.
 like display dialogs & bottom sheets, check the value is null or not, Date Operations and formation
 It also helps you to reduce the code and make it more readable.
 
@@ -80,6 +80,13 @@ class anyName with ValidationMixn{
 * you can read logs by using the following code
 ```dart
   logMessage("your message");
+```
+* Make your any widget Click able with the following code & give Beautiful animation
+```dart
+  SweetButton(
+     onPressed: () { },
+      child: "Widget"
+   )
 ```
 ## Additional information
 This package is still under development. 
