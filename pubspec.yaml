@@ -15,7 +15,7 @@ dependencies:
 
     # Core
   intl: ^0.18.0
-  connectivity_plus: ^4.0.1
+  connectivity_plus: ^4.0.2
 
 dev_dependencies:
   flutter_test:
