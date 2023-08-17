@@ -52,12 +52,12 @@ Widget _material3sheet(Widget child, double elevation){
 abstract class Dialogs {
 
 
-   static showDialog({
+   static showDialogX({
      required Widget child,
      bool isCancelable=true,
      BuildContext ? context,
    }){
-      showAdaptiveDialog(context: context??AppCntx.currentContext,
+      showDialog(context: context??AppCntx.currentContext,
           builder: (context) => Dialog(
             backgroundColor: Colors.transparent,
             insetPadding: const EdgeInsets.symmetric(horizontal: 20),
