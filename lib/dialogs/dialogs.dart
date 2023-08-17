@@ -47,3 +47,60 @@ Widget _material3sheet(Widget child, double elevation){
     child: child,
   );
 }
+
+
+abstract class Dialogs {
+
+
+   static showDialog({
+     required Widget child,
+     bool isCancelable=true,
+     BuildContext ? context,
+   }){
+      showAdaptiveDialog(context: context??AppCntx.currentContext,
+          builder: (context) => Dialog(
+            backgroundColor: Colors.transparent,
+            insetPadding: const EdgeInsets.symmetric(horizontal: 20),
+            child: child,
+          ),);
+   }
+
+
+   static showBottomSheet( {
+     required Widget child,
+     bool isCancelable=true,
+     BuildContext ? context,
+     heightFactor = 0.5,
+     double elevation=0,
+     bool showDragHandel=true,
+     BorderRadiusGeometry? borderRadius,
+   }){
+     var userMaterial3 = Theme.of(AppCntx.currentContext).useMaterial3;
+     showModalBottomSheet(
+       backgroundColor: Colors.transparent,
+       context: context??AppCntx.currentContext,
+       isDismissible: isCancelable,
+       isScrollControlled: true,
+       showDragHandle: showDragHandel,
+       useSafeArea: true,
+       builder: (context) => FractionallySizedBox(
+         heightFactor: heightFactor,
+         child: userMaterial3? _material3sheet(child, elevation, borderRadius: borderRadius): child,
+       ),
+     );
+   }
+
+
+  static Widget _material3sheet(Widget child, double elevation, {BorderRadiusGeometry? borderRadius}){
+    var colorScheme = Theme.of(AppCntx.currentContext).colorScheme;
+    return Material(
+      color: colorScheme.surface,
+      shadowColor: colorScheme.onSurface,
+      surfaceTintColor: colorScheme.onSurface,
+      borderRadius:borderRadius ,
+      elevation: elevation,
+      child: child,
+    );
+  }
+
+}
