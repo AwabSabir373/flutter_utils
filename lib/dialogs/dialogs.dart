@@ -72,7 +72,7 @@ abstract class Dialogs {
      BuildContext ? context,
      heightFactor = 0.5,
      double elevation=0,
-     bool showDragHandel=true,
+     bool showDragHandel=false,
      BorderRadiusGeometry? borderRadius,
    }){
      var userMaterial3 = Theme.of(AppCntx.currentContext).useMaterial3;
