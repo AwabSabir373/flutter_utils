@@ -89,14 +89,14 @@ mixin ValidationMixn{
     }
     return null;
   }
-  String? validatePhoneNumber(String value) {
-    if (value.isEmpty) return "Please enter mobile number";
-    if (value.length <= 10) {
+  String? validatePhoneNumber(String ? value) {
+    if (value?.isEmpty??false) return "Please enter mobile number";
+    if ((value?.length??0) <= 10) {
       return "Invalid mobile number";
     }
     Pattern pattern = r'(^(?:[+0]9)?[0-9]{9,20}$)';
     RegExp regex =  RegExp("$pattern");
-    if (!regex.hasMatch(value.trim())) {
+    if (!regex.hasMatch(value?.trim() as String)) {
       return "Invalid mobile number";
     }
     return null;
