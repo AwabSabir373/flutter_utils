@@ -22,3 +22,19 @@ String convertTime24Formate(String time) {
   }
   return finalTime;
 }
+
+
+//convert 24 to 12 hours
+String convertTime24To12(String time) {
+  String finalTime = '';
+  if (time.contains('PM')) {
+    finalTime = time.replaceAll('PM', '');
+    finalTime = finalTime.trim();
+    finalTime = '$finalTime PM';
+  } else {
+    finalTime = time.replaceAll('AM', '');
+    finalTime = finalTime.trim();
+    finalTime = '$finalTime AM';
+  }
+  return finalTime;
+}
