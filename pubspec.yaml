@@ -6,7 +6,7 @@ version: 1.0.2
 homepage: 'https://github.com/AwabSabir373/flutter_utils'
 
 environment:
-  sdk: '>=2.19.6 <4.0.0'
+  sdk: '>=3.0.1 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
@@ -20,7 +20,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.2
+  flutter_lints: ^2.0.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
