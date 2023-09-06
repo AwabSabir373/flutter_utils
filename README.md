@@ -36,15 +36,24 @@ home: Home(),
 * display Dialogs & Bottom Sheets
 * If you want display bottom sheet you can set just type as DialogType.bottomSheet
 ```dart
-showFullWidthDialog(
+Dialogs.showDialogX(
        child : "any widget",
-      type : DialogType.dialog,
       isCancelable: "click outside of the dialog to close",
       context : "pass context if you don't pass the context"
          " add your MaterialApp navigator key mentioned above",
-      heightFactor : "height of the bottom sheet",
-      elevation : "elevation of the bottom sheet",
     ); 
+```
+* If you want display bottom sheet you can just call this method
+*  This boottom sheet is supported Material3
+```dart
+Dialogs.showBottomSheet(
+child : "any widget",
+isCancelable: "click outside of the dialog to close",
+context : "pass context if you don't pass the context"
+" add your MaterialApp navigator key mentioned above",
+heightFactor = 0.5,
+double elevation=0,
+);
 ```
 * check the value is null or not
 ```dart
@@ -87,6 +96,21 @@ class anyName with ValidationMixn{
      onPressed: () { },
       child: "Widget"
    )
+```
+* Get date with current month name formate like "23-September-2021"
+* you can pass any date to this method and it will return the date with current month name
+* you can also pass string date to this method and it will return the date with current month name
+```dart
+  getDateByName(DateTime.now());
+  stringToDateByName("25-September-2021");
+```
+* Get time Ago from the given date
+* you can pass any date to this method and it will return the time ago from the given date
+```dart
+  calculateTimeDelayInMinutes(
+    required DateTime start, 
+    required DateTime end
+ )
 ```
 ## Additional information
 This package is still under development. 

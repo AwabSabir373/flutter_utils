@@ -49,7 +49,7 @@ String convert24To12(String time) {
 
 String calculateTimeDelayInMinutes({required DateTime start, required DateTime end}) {
   String timeDelay = "";
-  int difference = start.difference(end).inMinutes;
+  int difference = end.difference(start).inMinutes;
   if (difference < 60) {
     timeDelay = "$difference min";
   } else if (difference >= 60 && difference < 1440) {
