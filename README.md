@@ -10,7 +10,10 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
+# Flutter utilsx
 
+[![Pub](https://img.shields.io/badge/flutter_Utilsx%20-github-blue.svg)](https://github.com/AwabSabir373/flutter_utils)
+<hr>
 This package is contains basic methods for working with the [Dart](https://dart.dev/) language.
 that are daily usage while developing a project.
 
