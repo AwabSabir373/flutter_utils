@@ -51,18 +51,21 @@ Widget _material3sheet(Widget child, double elevation){
 
 abstract class Dialogs {
 
-
+  static bool _isDialogOpen=false;
+  static bool get isDialogOpen => _isDialogOpen;
    static showDialogX({
      required Widget child,
      bool isCancelable=true,
      BuildContext ? context,
    }){
+     _isDialogOpen=true;
       showDialog(context: context??AppCntx.currentContext,
+          barrierDismissible: isCancelable,
           builder: (context) => Dialog(
             backgroundColor: Colors.transparent,
             insetPadding: const EdgeInsets.symmetric(horizontal: 20),
             child: child,
-          ),);
+          ),).then((value) => _isDialogOpen=false);
    }
 
 
@@ -102,5 +105,14 @@ abstract class Dialogs {
       child: child,
     );
   }
+
+
+
+   static closeDialog(){
+     if(_isDialogOpen){
+       Navigator.of(AppCntx.currentContext).pop();
+       _isDialogOpen=false;
+     }
+   }
 
 }
