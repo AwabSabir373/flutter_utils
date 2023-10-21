@@ -13,10 +13,10 @@ and the Flutter guide for
 # Flutter utilsx
 
 [![Pub](https://img.shields.io/badge/flutter_Utilsx%20-github-blue.svg)](https://github.com/AwabSabir373/flutter_utils)
-<hr>
-This package is contains basic methods for working with the [Dart](https://dart.dev/) language.
-that are daily usage while developing a project.
 
+[![Pub](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/awabsabir)
+
+<hr>
 ## Features
 
 It contains a lot of methods that are daily usage while developing a project.
@@ -45,6 +45,14 @@ Dialogs.showDialogX(
       context : "pass context if you don't pass the context"
          " add your MaterialApp navigator key mentioned above",
     ); 
+```
+* If you want to check Dialog is open or not you can use the following code
+```dart
+Dialogs.isDialogOpen;
+```
+* If you want to close Dialog you can use the following code
+```dart
+Dialogs.closeDialog();
 ```
 * If you want display bottom sheet you can just call this method
 *  This boottom sheet is supported Material3
