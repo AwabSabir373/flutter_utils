@@ -10,18 +10,17 @@ DateTime stringToDate(String date, {String format = 'yyyy-MM-dd'}) {
   }
 }
 
-String convertTime24Formate(String time) {
-  String finalTime = '';
-  if (time.contains('PM')) {
-    finalTime = time.replaceAll('PM', '');
-    finalTime = finalTime.trim();
-    finalTime = '$finalTime PM';
+List<int> convertTimeTo24Hour(String time) {
+  List<int> timeList = [];
+  if (time.contains('AM')) {
+    time = time.replaceAll('AM', '');
+    timeList = time.split(':').map((e) => int.parse(e)).toList();
   } else {
-    finalTime = time.replaceAll('AM', '');
-    finalTime = finalTime.trim();
-    finalTime = '$finalTime AM';
+    time = time.replaceAll('PM', '');
+    timeList = time.split(':').map((e) => int.parse(e)).toList();
+    timeList[0] = timeList[0] + 12;
   }
-  return finalTime;
+  return timeList;
 }
 
 
