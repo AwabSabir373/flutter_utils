@@ -123,6 +123,14 @@ class anyName with ValidationMixn{
     required DateTime end
  )
 ```
+* Calculate Percentage
+* you can pass any value to this method and it will return the percentage of the given value
+```dart
+  calculatePercentage(
+    required double total, 
+    required double value
+ )
+```
 ## Additional information
 This package is still under development. 
 If you have any suggestions or issues please raise them on [GitHub](https://github.com/AwabSabir373/flutter_utils/issues).
