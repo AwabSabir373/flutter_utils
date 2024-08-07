@@ -1,8 +1,9 @@
 import 'dart:developer' as developer;
 
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
+
 void logMessage(message) {
   developer.log('$message', name: 'X-Log');
 }
@@ -31,24 +32,34 @@ bool isEmpty(value) {
 }
 
 //scroll hander
+/// Handles the scroll direction and triggers a callback function based on the scroll direction.
+///
+/// This function monitors the scroll direction of the provided `ScrollController`.
+/// If the user scrolls down (reverse), it triggers the callback function with `true`.
+/// If the user scrolls up (forward), it triggers the callback function with `false`.
+///
+/// \[function\] - A callback function that takes a boolean value indicating the scroll direction.
+/// \[scrollController\] - The `ScrollController` that monitors the scroll position.
+///
+/// Example:
+/// ```dart
+/// ScrollController _scrollController = ScrollController();
+/// scrollDirectionHandler(
+///   function: (isScrollingDown) {
+///     if (isScrollingDown) {
+///       print('Scrolling down');
+///     } else {
+///       print('Scrolling up');
+///     }
+///   },
+///   scrollController: _scrollController,
+/// );
+/// ```
 void scrollDirectionHandler({required ValueChanged<bool> function, required ScrollController scrollController}) {
   if (scrollController.position.userScrollDirection == ScrollDirection.reverse) {
     function(true);
   }
-  if (scrollController.position.userScrollDirection ==
-      ScrollDirection.forward) {
+  if (scrollController.position.userScrollDirection == ScrollDirection.forward) {
     function(false);
-  }
-}
-
-// check internet connection
-Future<bool> checkInternetConnection() async {
-  var connectivityResult = await (Connectivity().checkConnectivity());
-  if (connectivityResult == ConnectivityResult.mobile) {
-    return true;
-  } else if (connectivityResult == ConnectivityResult.wifi) {
-    return true;
-  } else {
-    return false;
   }
 }

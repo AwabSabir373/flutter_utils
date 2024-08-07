@@ -123,6 +123,19 @@ class anyName with ValidationMixn{
     required DateTime end
  )
 ```
+* Get the current date and time
+* you can get the current date and time by using the following code
+```dart
+  currentDate;
+```
+
+* BuildContext Extension to get the theme, size, textTheme, colorScheme
+```dart
+  context.theme;
+  context.size;
+  context.textTheme;
+  context.colorScheme;
+```
 ## Additional information
 This package is still under development. 
 If you have any suggestions or issues please raise them on [GitHub](https://github.com/AwabSabir373/flutter_utils/issues).
