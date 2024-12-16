@@ -66,6 +66,26 @@ heightFactor = 0.5,
 double elevation=0,
 );
 ```
+
+## Find Stateless Widget Are in Same Parent Context
+```dart 
+MyStatelessWidget? widget = context.findStatelessWidgetInSameContext<MyStatelessWidget>();
+ if (widget != null) {
+   // Do something with the widget
+ }
+ ```
+
+## Find StatFull Widget Are in Same Parent Context
+```dart 
+MyState? state = context.findAncestorStateOfType<MyState>();
+ if (state != null) {
+   // Do something with the state
+ }
+ ```
+
+
+
+
 * check the value is null or not
 ```dart
 isNotEmpty(dynamic value);
@@ -136,6 +156,7 @@ class anyName with ValidationMixn{
   context.textTheme;
   context.colorScheme;
 ```
+
 ## Additional information
 This package is still under development. 
 If you have any suggestions or issues please raise them on [GitHub](https://github.com/AwabSabir373/flutter_utils/issues).
