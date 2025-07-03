@@ -1,4 +1,4 @@
-library flutter_utils;
+library;
 
 export 'custom_utils/custom_utils.dart' ;
 export 'custom_utils/validation_mixin.dart';

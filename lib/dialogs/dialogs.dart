@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../context/context.dart';
 enum DialogType {dialog, bottomSheet }
-showFullWidthDialog(
+void showFullWidthDialog(
     {
       required Widget child,
       required DialogType type,
@@ -53,7 +53,7 @@ abstract class Dialogs {
 
   static bool _isDialogOpen=false;
   static bool get isDialogOpen => _isDialogOpen;
-   static showDialogX({
+   static void showDialogX({
      required Widget child,
      bool isCancelable=true,
      BuildContext ? context,
@@ -69,7 +69,7 @@ abstract class Dialogs {
    }
 
 
-   static showBottomSheet( {
+   static void showBottomSheet( {
      required Widget child,
      bool isCancelable=true,
      BuildContext ? context,
@@ -108,7 +108,7 @@ abstract class Dialogs {
 
 
 
-   static closeDialog(){
+   static void closeDialog(){
      if(_isDialogOpen){
        Navigator.of(AppCntx.currentContext).pop();
        _isDialogOpen=false;

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 class SweetButton extends StatelessWidget {
-  const SweetButton({Key? key, required this.child, required this.onPressed}) : super(key: key);
+  const SweetButton({super.key, required this.child, required this.onPressed});
   final Widget child;
   final VoidCallback onPressed;
   @override
