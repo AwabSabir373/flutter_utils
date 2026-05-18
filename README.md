@@ -1,165 +1,336 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+<div align="center">
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+<img src="https://raw.githubusercontent.com/AwabSabir373/flutter_utils/main/assets/logo.png" width="100" alt="flutter_utilsx logo" />
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-# Flutter utilsx
+# flutter_utilsx
 
-[![Pub](https://img.shields.io/badge/flutter_Utilsx%20-github-blue.svg)](https://github.com/AwabSabir373/flutter_utils)
+**A powerful Flutter utility package — less code, more productivity.**
 
-[![Pub](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/awabsabir)
+[![pub version](https://img.shields.io/pub/v/flutter_utilsx.svg?style=flat-square&color=0175C2&label=pub)](https://pub.dev/packages/flutter_utilsx)
+[![GitHub](https://img.shields.io/badge/GitHub-AwabSabir373-181717?style=flat-square&logo=github)](https://github.com/AwabSabir373/flutter_utils)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![Flutter](https://img.shields.io/badge/Flutter-%E2%9D%A4-02569B?style=flat-square&logo=flutter)](https://flutter.dev)
 
-<hr>
-## Features
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-%E2%98%95-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/awabsabir)
 
-It contains a lot of methods that are daily usage while developing a project.
-like display dialogs & bottom sheets, check the value is null or not, Date Operations and formation
-It also helps you to reduce the code and make it more readable.
+</div>
 
-## Usage
+---
 
-This package is very easy to use. You can use it by adding the following code to your project.
-to `lib/main` folder.
-* Set up the package in your MaterialApp add the following code to your `lib/main` folder.
+## ✨ Overview
+
+`flutter_utilsx` is a collection of daily-use Flutter utilities that reduce boilerplate and keep your code clean. It covers:
+
+- 🎨 **Animated Top Snack Bar** — glassmorphism snackbar with smooth slide & fade (no external animation package needed)
+- 📦 **Dialogs & Bottom Sheets** — show/close dialogs with one line
+- 📏 **Responsive Size Extensions** — `hp`, `wp`, `heightBox`, `widthBox`
+- ✅ **Validation Mixin** — email, password, and more
+- 📅 **Date Utilities** — format, convert, parse dates easily
+- 🔍 **Context Extensions** — theme, size, colorScheme, textTheme
+- 🔘 **SweetButton** — animated, tactile button widget
+- 🪵 **Logger** — clean debug logging
+
+---
+
+## 🚀 Setup
+
+Add the navigator key to your `MaterialApp` so context-free utilities work:
 
 ```dart
-const 
 MaterialApp(
-navigatorKey: AppCntx.navigatorKey,
-home: Home(),
-);
-```
-* display Dialogs & Bottom Sheets
-* If you want display bottom sheet you can set just type as DialogType.bottomSheet
-```dart
-Dialogs.showDialogX(
-       child : "any widget",
-      isCancelable: "click outside of the dialog to close",
-      context : "pass context if you don't pass the context"
-         " add your MaterialApp navigator key mentioned above",
-    ); 
-```
-* If you want to check Dialog is open or not you can use the following code
-```dart
-Dialogs.isDialogOpen;
-```
-* If you want to close Dialog you can use the following code
-```dart
-Dialogs.closeDialog();
-```
-* If you want display bottom sheet you can just call this method
-*  This boottom sheet is supported Material3
-```dart
-Dialogs.showBottomSheet(
-child : "any widget",
-isCancelable: "click outside of the dialog to close",
-context : "pass context if you don't pass the context"
-" add your MaterialApp navigator key mentioned above",
-heightFactor = 0.5,
-double elevation=0,
+  navigatorKey: AppCntx.navigatorKey,
+  home: MyHomePage(),
 );
 ```
 
-## Find Stateless Widget Are in Same Parent Context
-```dart 
-MyStatelessWidget? widget = context.findStatelessWidgetInSameContext<MyStatelessWidget>();
- if (widget != null) {
-   // Do something with the widget
- }
- ```
+---
 
-## Find StatFull Widget Are in Same Parent Context
-```dart 
-MyState? state = context.findAncestorStateOfType<MyState>();
- if (state != null) {
-   // Do something with the state
- }
- ```
+## 🔔 Animated Top Snack Bar
 
+A **zero-dependency**, performance-first top snackbar with glassmorphism design.
+Uses Flutter's native `SlideTransition` + `FadeTransition` — no third-party animation package required.
 
+### Animation behavior
+- Slides down with `Curves.easeOutBack` (springy feel)
+- Fades in simultaneously
+- Stays visible for **2 seconds**
+- Slides back up with `Curves.easeIn` + fades out
 
+### Show a **Success** Snackbar
 
-* check the value is null or not
 ```dart
-isNotEmpty(dynamic value);
+showDialog(
+  context: context,
+  barrierColor: Colors.transparent,
+  barrierDismissible: false,
+  builder: (_) => Stack(
+    children: [
+      AnimatedTopSnackBar(
+        message: 'Profile updated successfully!',
+        isError: false,
+      ),
+    ],
+  ),
+);
 ```
-* Date Operations and formation
+
+### Show an **Error** Snackbar
+
 ```dart
-stringToDate("25/9/2023", DateFormates.YYYY_MM_DD);
-convertTime24Formate("time");
+showDialog(
+  context: context,
+  barrierColor: Colors.transparent,
+  barrierDismissible: false,
+  builder: (_) => Stack(
+    children: [
+      AnimatedTopSnackBar(
+        message: 'Something went wrong. Please try again.',
+        isError: true,
+      ),
+    ],
+  ),
+);
 ```
-* validate your form
-* you can validate your form by using the following code
+
+### Helper function (recommended)
+
+Wrap the call in a reusable helper so you can call it anywhere:
+
 ```dart
-class anyName with ValidationMixn{
-  TextFormField(
-    validator: (value) => validateEmail(value),
-  );
-  TextFormField(
-  validator: validatePassword,
+void showTopSnackBar(BuildContext context, {
+  required String message,
+  required bool isError,
+}) {
+  showDialog(
+    context: context,
+    barrierColor: Colors.transparent,
+    barrierDismissible: false,
+    builder: (_) => Stack(
+      children: [
+        AnimatedTopSnackBar(
+          message: message,
+          isError: isError,
+        ),
+      ],
+    ),
   );
 }
 ```
-* Give heigh and with of the widget
-* hp is for height percentage
-* wp is for width percentage
-* heightBox is for height
+
 ```dart
-   20.heightBox
-   10.widthBox
-   5.hp
-```
-* Read Logs 
-* you can read logs by using the following code
-```dart
-  logMessage("your message");
-```
-* Make your any widget Click able with the following code & give Beautiful animation
-```dart
-  SweetButton(
-     onPressed: () { },
-      child: "Widget"
-   )
-```
-* Get date with current month name formate like "23-September-2021"
-* you can pass any date to this method and it will return the date with current month name
-* you can also pass string date to this method and it will return the date with current month name
-```dart
-  getDateByName(DateTime.now());
-  stringToDateByName("25-September-2021");
-```
-* Get time Ago from the given date
-* you can pass any date to this method and it will return the time ago from the given date
-```dart
-  calculateTimeDelayInMinutes(
-    required DateTime start, 
-    required DateTime end
- )
-```
-* Get the current date and time
-* you can get the current date and time by using the following code
-```dart
-  currentDate;
+// Success
+showTopSnackBar(context, message: 'Saved!', isError: false);
+
+// Error
+showTopSnackBar(context, message: 'Failed to save.', isError: true);
 ```
 
-* BuildContext Extension to get the theme, size, textTheme, colorScheme
+### Without `context` (context-free, using `AppCntx`)
+
 ```dart
-  context.theme;
-  context.size;
-  context.textTheme;
-  context.colorScheme;
+showDialog(
+  context: AppCntx.currentContext,
+  barrierColor: Colors.transparent,
+  barrierDismissible: false,
+  builder: (_) => Stack(
+    children: [
+      AnimatedTopSnackBar(
+        message: 'Operation completed!',
+        isError: false,
+      ),
+    ],
+  ),
+);
 ```
 
-## Additional information
-This package is still under development. 
-If you have any suggestions or issues please raise them on [GitHub](https://github.com/AwabSabir373/flutter_utils/issues).
-Also, if you want to contribute to this package please feel free to fork this repository and contribute.
-And if you like this package please give it a star.
+### Parameters
 
+| Parameter | Type     | Required | Description                                   |
+|-----------|----------|----------|-----------------------------------------------|
+| `message` | `String` | ✅        | The text to display in the snackbar           |
+| `isError` | `bool`   | ✅        | `true` = error (❌ icon), `false` = success (✅ icon) |
+
+---
+
+## 📦 Dialogs & Bottom Sheets
+
+### Setup
+
+```dart
+MaterialApp(
+  navigatorKey: AppCntx.navigatorKey,
+  home: MyHomePage(),
+);
+```
+
+### Show a Dialog
+
+```dart
+Dialogs.showDialogX(
+  child: MyCustomWidget(),
+  isCancelable: true,      // tap outside to dismiss (default: true)
+  context: context,        // optional — uses AppCntx if omitted
+);
+```
+
+### Check if Dialog is Open
+
+```dart
+bool isOpen = Dialogs.isDialogOpen;
+```
+
+### Close a Dialog
+
+```dart
+Dialogs.closeDialog();
+```
+
+### Show a Bottom Sheet
+
+```dart
+Dialogs.showBottomSheet(
+  child: MyCustomWidget(),
+  isCancelable: true,        // default: true
+  heightFactor: 0.6,         // fraction of screen height (default: 0.5)
+  elevation: 4,
+  showDragHandel: true,
+  borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+  context: context,          // optional
+);
+```
+
+---
+
+## 📏 Responsive Size Extensions
+
+```dart
+// Height percentage of screen
+5.hp   // 5% of screen height
+
+// Width percentage of screen
+10.wp  // 10% of screen width
+
+// SizedBox helpers
+20.heightBox   // SizedBox(height: 20)
+10.widthBox    // SizedBox(width: 10)
+```
+
+---
+
+## ✅ Validation Mixin
+
+```dart
+class MyFormState extends State<MyForm> with ValidationMixn {
+  // ...
+  TextFormField(
+    validator: (value) => validateEmail(value),
+  );
+
+  TextFormField(
+    validator: validatePassword,
+  );
+}
+```
+
+---
+
+## 📅 Date Utilities
+
+```dart
+// Parse string to DateTime
+stringToDate('25/9/2023', DateFormates.YYYY_MM_DD);
+
+// Convert to 24h time format
+convertTime24Formate('3:30 PM');
+
+// Get date with full month name e.g. "23-September-2021"
+getDateByName(DateTime.now());
+stringToDateByName('25-September-2021');
+
+// Time elapsed between two dates (in minutes)
+calculateTimeDelayInMinutes(
+  start: DateTime.now(),
+  end: DateTime.now().add(Duration(minutes: 30)),
+);
+
+// Get current date
+currentDate;
+```
+
+---
+
+## 🔍 Context Extensions
+
+```dart
+context.theme;        // ThemeData
+context.size;         // Size (screen size)
+context.textTheme;    // TextTheme
+context.colorScheme;  // ColorScheme
+```
+
+### Find Widgets in Context
+
+```dart
+// Find a StatelessWidget in the same parent context
+MyStatelessWidget? widget = context.findStatelessWidgetInSameContext<MyStatelessWidget>();
+if (widget != null) {
+  // use widget
+}
+
+// Find a StatefulWidget's State in ancestor context
+MyState? state = context.findAncestorStateOfType<MyState>();
+if (state != null) {
+  // use state
+}
+```
+
+---
+
+## 🔘 SweetButton
+
+An animated, tactile button with a satisfying press effect:
+
+```dart
+SweetButton(
+  onPressed: () {
+    // your action
+  },
+  child: Text('Press Me'),
+);
+```
+
+---
+
+## 🪵 Logger
+
+```dart
+logMessage('Your debug message here');
+```
+
+---
+
+## 🔢 Null / Empty Check
+
+```dart
+isNotEmpty(dynamic value); // returns true if value is not null/empty
+```
+
+---
+
+## 📋 Additional Information
+
+- 📌 Version: `1.1.1`
+- 🎯 Dart SDK: `>=3.0.0 <4.0.0`
+- 💙 Flutter: `>=1.17.0`
+
+This package is actively maintained. If you have suggestions, feature requests, or bugs:
+
+- 🐛 [Open an Issue](https://github.com/AwabSabir373/flutter_utils/issues)
+- 🍴 [Fork & Contribute](https://github.com/AwabSabir373/flutter_utils/fork)
+- ⭐ If you find it useful, please give it a **star** on GitHub!
+
+---
+
+<div align="center">
+Made with ❤️ by <a href="https://github.com/AwabSabir373">Awab Sabir</a>
+</div>

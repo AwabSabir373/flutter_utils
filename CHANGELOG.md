@@ -1,3 +1,3 @@
-## 1.0.9
+## 1.1.2
 
-* The current versions is 1.1.0 with the time this support more features will be added.
+* The current versions is 1.1.2 with the time this support more features will be added.
